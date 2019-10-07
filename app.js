@@ -1,14 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var sassMiddleware = require('node-sass-middleware');
+constcreateError = require('http-errors');
+constexpress = require('express');
+constpath = require('path');
+constcookieParser = require('cookie-parser');
+constlogger = require('morgan');
+constsassMiddleware = require('node-sass-middleware');
+constfirebase = require("firebase/app");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// Add the Firebase products that you want to use
+require("firebase/auth");
+require("firebase/firestore");
 
-var app = express();
+constindexRouter = require('./routes/index');
+constusersRouter = require('./routes/users');
+
+constapp = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
